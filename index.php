@@ -225,7 +225,7 @@ session_start();
 										</li>
 									</ul>
 								</li>
-								<li class="has-submenu">
+								<!-- <li class="has-submenu">
 									<a href="#"><i class="fa fa-calculator"></i> Review <div class="arrow-down"></div></a>
 									<ul class="submenu">
 										<li>
@@ -233,7 +233,7 @@ session_start();
 											<a href="<?php echo $base_url; ?>hasil_review">Hasil Review</a>
 										</li>
 									</ul>
-								</li>
+								</li> -->
 								<li class="has-submenu">
 									<a href="#"><i class="fa fa-list"></i> Laporan<div class="arrow-down"></div></a>
 									<ul class="submenu">

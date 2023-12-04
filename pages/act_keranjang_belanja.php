@@ -2,7 +2,7 @@
 error_reporting(0);
 session_start();
 include '../config/koneksi.php';
-
+$_SESSION['id_pelanggan'] = session_id();
 $id_pelanggan = $_SESSION['id_pelanggan'];
 $id_produk = $_POST['id'];
 $harga = $_POST['harga'];

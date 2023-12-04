@@ -13,7 +13,7 @@
             			<div class="card-body p-4">
 
             				<div class="text-center w-75 m-auto">
-            					<span style="font-weight: bold; font-size: 20px">Surya Outdor Camping</span>
+            					<span style="font-weight: bold; font-size: 20px">Sewa Komputer Murah</span>
             					<p class="text-muted mb-4 mt-3">Enter your email address and password to access admin panel.</p>
             				</div>
             				<?php 
@@ -89,7 +89,7 @@
 
             					<div class="row mt-3">
             						<div class="col-12 text-center">
-            							<p class="text-muted">Belum punya akun ? <a href="register" class="text-primary font-weight-medium ml-1">Daftar</a></p>
+            							<!-- <p class="text-muted">Belum punya akun ? <a href="register" class="text-primary font-weight-medium ml-1">Daftar</a></p> -->
             						</div> <!-- end col -->
             					</div>
             				</div>

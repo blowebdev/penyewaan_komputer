@@ -144,7 +144,7 @@
                                     <label for="example-textarea" class="form-label">Pengiriman</label>
                                     <select class="form-control" name="pengiriman" id="pengiriman" onchange="updateHarga('<?php echo $total_harga; ?>')" required="">
                                         <option value="">Pengiriman</option>
-                                        <option value="dikirim">Dikirim dan Dijemput (Area Mojokerto) Rp. 50.000</option>
+                                        <!-- <option value="dikirim">Dikirim dan Dijemput (Area Mojokerto) Rp. 50.000</option> -->
                                         <option value="ambil_sendiri">Ambil sendiri</option>
                                     </select>
                                 </div>

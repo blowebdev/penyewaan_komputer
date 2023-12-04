@@ -149,7 +149,9 @@
 			}
 
 			function keranjang_belanja(id, harga) {
-				<?php  if(!empty($_SESSION['id_pelanggan'])) :?>
+				<?php  
+				$_SESSION['id_pelanggan'] = session_id();
+				if(!empty($_SESSION['id_pelanggan'])) :?>
 					var id = id;
 					var harga = harga;
 					var qty = parseInt($("#qty"+id).val());

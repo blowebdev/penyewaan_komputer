@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 22 Jun 2023 pada 08.09
+-- Waktu pembuatan: 04 Des 2023 pada 11.50
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -50,7 +50,7 @@ CREATE TABLE `master_detail_transaksi` (
 --
 
 INSERT INTO `master_detail_transaksi` (`id`, `kode_transaksi`, `id_produk`, `id_pelanggan`, `harga`, `qty`, `tgl_pinjam`, `tgl_selesai`, `durasi`, `total_harga`, `total`, `create_at`, `status`, `review`, `denda`) VALUES
-(25, 'TRX5F5E9FCA', 1, 4, 50000, 10, '2023-06-18 00:00:00', '2023-06-19 08:00:00', 1, 100000, 100000, '2023-06-20 03:14:13', 'PROSES', '', 0);
+(46, 'TRX7FA10D9C', 3, 5, 100000, 1, '2023-12-04 18:00:00', '2023-12-05 17:00:00', 1, 100000, 100000, '2023-12-04 11:48:46', 'PROSES', '', 0);
 
 -- --------------------------------------------------------
 
@@ -209,11 +209,11 @@ CREATE TABLE `master_produk` (
 --
 
 INSERT INTO `master_produk` (`id`, `nama`, `harga`, `gambar`, `deskripsi`, `stock`) VALUES
-(1, 'Tenda Camping Murah ', 50000, '2023-05-22-tenda.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 10),
-(2, 'Kompor Camping', 75000, '2023-05-22-kompur.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.	', 10),
-(3, 'Sleeping bag camping', 100000, '2023-05-22-e7ffe2326151ed5a522934d4618c9640.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.	  ', 50),
-(5, 'Paket camping ke bromo', 40000, '2023-05-23-tenda.jpg', 'I have everything working quite well but I cant seem to get the picker to use the default values that I set in the . There are two inputs, a start date and end date. I have a value=\"\" with a date in both which should be the default date for the datepicker. Then the user has the ability to change those dates.', 10),
-(6, 'Paket camping ke jombang', 30000, '2023-05-28-banner_depan2.png', 'Deskripsi', 100);
+(1, 'Komputer Lenovo', 50000, '2023-05-28-banner_depan2.png', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 10),
+(2, 'Komputer Toshiba', 75000, '2023-05-28-banner_depan2.png', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.	', 10),
+(3, 'Komputer Toshiba', 100000, '2023-05-28-banner_depan2.png', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.	  ', 50),
+(5, 'Proyektor BENQ', 40000, '2023-05-28-banner_depan2.png', 'I have everything working quite well but I cant seem to get the picker to use the default values that I set in the . There are two inputs, a start date and end date. I have a value=\"\" with a date in both which should be the default date for the datepicker. Then the user has the ability to change those dates.', 10),
+(6, 'Proyektor BENQ 2', 30000, '2023-05-28-banner_depan2.png', 'Deskripsi', 100);
 
 -- --------------------------------------------------------
 
@@ -224,11 +224,21 @@ INSERT INTO `master_produk` (`id`, `nama`, `harga`, `gambar`, `deskripsi`, `stoc
 CREATE TABLE `master_tracking_pengiriman` (
   `id` int(11) NOT NULL,
   `status` text NOT NULL,
-  `catatan` int(11) NOT NULL,
+  `catatan` text NOT NULL,
   `tanggal` datetime NOT NULL,
   `kode_transaksi` text NOT NULL,
   `nm_pengirim` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `master_tracking_pengiriman`
+--
+
+INSERT INTO `master_tracking_pengiriman` (`id`, `status`, `catatan`, `tanggal`, `kode_transaksi`, `nm_pengirim`) VALUES
+(4, 'dikirim', 'catatan', '2023-06-25 15:16:51', 'TRX60707BA2', 'yakin'),
+(6, 'Barang sudah diterima', 'catatan', '2023-06-25 15:19:00', 'TRX60707BA2', '-'),
+(7, 'dikirim', 'catatan', '2023-07-19 09:52:51', 'TRXA975790D', 'yakin'),
+(8, 'Barang sudah diterima', 'barang bagus', '2023-07-19 09:53:30', 'TRXA975790D', '-');
 
 -- --------------------------------------------------------
 
@@ -253,15 +263,16 @@ CREATE TABLE `master_transaksi` (
   `created_at` datetime NOT NULL,
   `status` text NOT NULL,
   `bank` text NOT NULL,
-  `struk` text NOT NULL
+  `struk` text NOT NULL,
+  `token` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `master_transaksi`
 --
 
-INSERT INTO `master_transaksi` (`id`, `id_pelanggan`, `kode_transaksi`, `total_barang`, `total_transaksi`, `nama`, `hp`, `alamat`, `pengiriman`, `catatan`, `biaya_kirim`, `grand_total`, `pembayaran`, `created_at`, `status`, `bank`, `struk`) VALUES
-(13, 4, 'TRX5F5E9FCA', 1, 100000, 'Zeaid', '62847758857676', 'Alamat Jombang', 'dikirim', 'Ok', 50000, 150000, 'cash', '2023-06-20 03:14:12', 'LUNAS', '', '');
+INSERT INTO `master_transaksi` (`id`, `id_pelanggan`, `kode_transaksi`, `total_barang`, `total_transaksi`, `nama`, `hp`, `alamat`, `pengiriman`, `catatan`, `biaya_kirim`, `grand_total`, `pembayaran`, `created_at`, `status`, `bank`, `struk`, `token`) VALUES
+(35, 5, 'TRX7FA10D9C', 1, 100000, 'Muhammad Ali', '6285748496135', '-', 'ambil_sendiri', '-', 0, 100000, 'cash', '2023-12-04 11:48:46', 'PROSES', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -356,7 +367,7 @@ ALTER TABLE `master_user`
 -- AUTO_INCREMENT untuk tabel `master_detail_transaksi`
 --
 ALTER TABLE `master_detail_transaksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT untuk tabel `master_isian_review`
@@ -368,7 +379,7 @@ ALTER TABLE `master_isian_review`
 -- AUTO_INCREMENT untuk tabel `master_keranjang_belanja`
 --
 ALTER TABLE `master_keranjang_belanja`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT untuk tabel `master_nilai_rekomendasi_review`
@@ -398,13 +409,13 @@ ALTER TABLE `master_produk`
 -- AUTO_INCREMENT untuk tabel `master_tracking_pengiriman`
 --
 ALTER TABLE `master_tracking_pengiriman`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `master_transaksi`
 --
 ALTER TABLE `master_transaksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
