@@ -13,8 +13,8 @@
                   <div class="card-body p-4">
 
                         <div class="text-center w-75 m-auto">
-                              <span style="font-weight: bold; font-size: 20px">Daftar member <br>Surya Outdor Camping</span>
-                              <p class="text-muted mb-4 mt-3">Lengkapi isian dibawah untuk menajutkan penyewaan alat camping.</p>
+                              <span style="font-weight: bold; font-size: 20px">Daftar member</span>
+                              <p class="text-muted mb-4 mt-3">Lengkapi isian dibawah untuk menajutkan penyewaan alat komputer.</p>
                         </div>
                         <?php 
                         if (isset($_POST['login'])) {

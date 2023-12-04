@@ -61,9 +61,9 @@
                                         <div class="faq-question-q-box">Q.</div>
                                         <h4 class="faq-question">Bagaimana Cara sewa lewat aplikasi ?</h4>
                                         <p class="faq-answer mb-4">
-                                            1. Pencarian barang camping yang tersedia. <br>
+                                            1. Pencarian barang komputer yang tersedia. <br>
                                             2. Penyewaan barang dengan menentukan tanggal dan durasi penyewaan.<br>
-                                            3. Informasi detail tentang setiap barang camping, termasuk deskripsi, gambar, harga sewa, dan persyaratan penyewaan.<br>
+                                            3. Informasi detail tentang setiap barang komputer, termasuk deskripsi, gambar, harga sewa, dan persyaratan penyewaan.<br>
                                             4. Keranjang belanja untuk menambahkan barang yang akan disewa.<br>
                                             5. Proses pembayaran yang aman.<br>
                                             6. Pelacakan status pesanan dan riwayat penyewaan.<br>
