@@ -59,6 +59,7 @@ if (isset($_REQUEST['hapus'])) {
 									<th width="10%">Stock</th>
 									<th width="10%">Sisa Stock</th>
 									<th width="30%">Deskripsi</th>
+									<th width="10%">Kategori</th>
 									<th width="1%" nowrap="">Aksi</th>
 								</tr>
 							</thead>
@@ -82,6 +83,7 @@ if (isset($_REQUEST['hapus'])) {
 											<?php echo $stock_akhir; ?>
 										</td>
 										<td><?php echo $data['deskripsi']; ?></td>
+										<td><?php echo $data['kategori']; ?></td>
 										<td nowrap="">
 											<form action="" method="POST">
 												<a href="add_produk/<?php echo $data['id']; ?>" class="btn btn-success"><i class="fa fa-edit"></i></a>

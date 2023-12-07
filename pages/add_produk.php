@@ -22,6 +22,7 @@ if (isset($_POST['nama'])) {
 	$nama = $_POST['nama'];
 	$harga = $_POST['harga'];
 	$deskripsi = $_POST['deskripsi'];
+	$kategori = $_POST['kategori'];
 	$stock = $_POST['stock'];
 	$date            = date("Y-m-d");
 
@@ -54,9 +55,9 @@ if (isset($_POST['nama'])) {
 	}
 
 	if(!empty($_REQUEST['id'])){
-		$sql = "UPDATE master_produk SET nama='".$nama."', harga='".$harga."', stock='".$stock."', deskripsi='".$deskripsi."' ".$set_gambar." WHERE id='".$_REQUEST['id']."'";
+		$sql = "UPDATE master_produk SET nama='".$nama."', harga='".$harga."', kategori='".$kategori."', stock='".$stock."', deskripsi='".$deskripsi."' ".$set_gambar." WHERE id='".$_REQUEST['id']."'";
 	}else{
-		$sql = "INSERT INTO master_produk (nama,harga,deskripsi,gambar,stock) VALUES ('".$nama."','".$harga."','".$deskripsi."','".$nm_foto."','".$stock."')";
+		$sql = "INSERT INTO master_produk (nama,harga,deskripsi,gambar,stock,kategori) VALUES ('".$nama."','".$harga."','".$deskripsi."','".$nm_foto."','".$stock."','".$kategori."')";
 	}
 
 	// echo  $sql;
@@ -105,6 +106,19 @@ if (!empty($_REQUEST['id'])) {
 							<label class="col-sm-2 col-form-label" for="example-email">Harga</label>
 							<div class="col-sm-10">
 								<input type="number" name="harga" value="<?php echo $datane['harga']; ?>" class="form-control" placeholder="Harga" required="">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-2 col-form-label" for="example-email">Kategori</label>
+							<div class="col-sm-10">
+								<select name="kategori" class="form-control" name="ketegori">
+									<option value="">Plih Kategori</option>
+									<option value="laptop" <?php echo ($datane['kategori']=='laptop') ? "selected" : ""; ?>>laptop</option>
+									<option value="proyektor" <?php echo ($datane['kategori']=='proyektor') ? "selected" : ""; ?>>proyektor</option>
+									<option value="screen proyektor" <?php echo ($datane['kategori']=='screen proyektor') ? "selected" : ""; ?>>screen proyektor</option>
+									<option value="kamera" <?php echo ($datane['kategori']=='kamera') ? "selected" : ""; ?>>kamera</option>
+									<option value="tripod kamera" <?php echo ($datane['kategori']=='tripod kamera') ? "selected" : ""; ?>>tripod kamera</option>
+								</select>
 							</div>
 						</div>
 						<div class="form-group row">

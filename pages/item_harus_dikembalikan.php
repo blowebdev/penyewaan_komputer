@@ -91,7 +91,7 @@
 <?php 
 if (isset($_REQUEST['update_lunas'])) {
     $id = $_REQUEST['id_detail'];
-    $update = mysqli_query($conn,"UPDATE master_detail_transaksi SET status='".$_REQUEST['status']."', denda='".$_REQUEST['denda']."' WHERE id='".$id."'");
+    $update = mysqli_query($conn,"UPDATE master_detail_transaksi SET status='".$_REQUEST['status']."', denda='".$_REQUEST['denda']."', catatan='".$_REQUEST['catatan']."' WHERE id='".$id."'");
     if ($update) {
         echo '
         <div class="alert alert-success alert-dismissible" role="alert">
@@ -116,7 +116,7 @@ if (isset($_REQUEST['update_lunas'])) {
 
 ?>
 
-<?php if(in_array($_SESSION['level'], array('1'))) :?>
+<?php if(in_array($_SESSION['level'], array('1','2'))) :?>
 <div class="row">
   <div class="col-6">
     <div class="card-box">
@@ -175,7 +175,7 @@ if (isset($_REQUEST['update_lunas'])) {
                                 if(!empty($_REQUEST['id'])){
                                     $q = "WHERE a.kode_transaksi='".$_REQUEST['id']."' ";
                                 }else{
-                                    if(in_array($_SESSION['level'],array('1'))) {
+                                    if(in_array($_SESSION['level'],array('1','2'))) {
 
                                         if (isset($_REQUEST['filter_tanggal'])) {
                                           $filtere_tanggal = "WHERE create_at>='".$_REQUEST['tgl_awal']."' AND create_at<='".$_REQUEST['tgl_akhir']."'";
@@ -295,10 +295,14 @@ if (isset($_REQUEST['update_lunas'])) {
                                                             <label>Isi Denda Pengembalian
                                                                <input type="number" value="<?php echo ($data['sisa_hari']<=1) ? 0 : 5000*$data['sisa_hari']; ?>" name="denda" class="form-control">
 
+                                                           </label><br>
+                                                           <label>Catatan Kerusakan
+                                                               
+                                                               <textarea class="form-control" name="catatan"><?php echo $data['catatan']; ?></textarea>
                                                            </label>
                                                            <input type="hidden" name="id_detail" value="<?php echo $data['id_detail']; ?>">
                                                            <input type="hidden" name="status" value="SUDAH">
-                                                           <button class="dropdown-item" type="submit" class="btn btn-primary" name="update_lunas"><i class="mdi mdi-check-all mr-2 text-muted font-18 vertical-middle"></i> Konfirmasi</button>
+                                                           <button class="dropdown-item" type="submit" class="btn btn-primary" name="update_lunas"><i class="mdi mdi-check-all mr-2 text-muted font-18 vertical-middle"></i> Simpan</button>
                                                        </form>
                                                    </div>
                                                </div>

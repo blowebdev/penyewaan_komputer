@@ -13,7 +13,7 @@
             			<div class="card-body p-4">
 
             				<div class="text-center w-75 m-auto">
-            					<span style="font-weight: bold; font-size: 20px">Sewa Komputer Murah</span>
+            					<span style="font-weight: bold; font-size: 20px">Akses Halaman <BR>Login untuk pemilik</span>
             					<p class="text-muted mb-4 mt-3">Enter your email address and password to access admin panel.</p>
             				</div>
             				<?php 
@@ -29,7 +29,7 @@
             						$_SESSION['nama']   = $data['nama'];
             						$_SESSION['admin_id']= $data['admin_id'];?>
             						<script>
-            							window.location = "./"
+            							window.location = "../"
             						</script>
             					<?php }else{
             						$username  = $_POST['username'];
@@ -46,11 +46,11 @@
                                                       ?>
             							<?php if($_SESSION['level']=='admin') : ?>
             								<script>
-            									window.location = "./"
+            									window.location = "../"
             								</script>
             								<?php else: ?>
             									<script>
-            										window.location = "./"
+            										window.location = "../"
             									</script>
             								<?php endif; 
             							}else{

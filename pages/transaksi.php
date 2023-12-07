@@ -100,7 +100,7 @@ if (isset($_REQUEST['update_lunas'])) {
 							</thead>
 							<tbody>
 								<?php 
-								if(in_array($_SESSION['level'], array('1'))){
+								if(in_array($_SESSION['level'], array('1','2'))){
 									if (isset($_REQUEST['filter_tanggal'])) {
 										$filtere_tanggal = "WHERE created_at>='".$_REQUEST['tgl_awal']."' AND created_at<='".$_REQUEST['tgl_akhir']."'";
 									}else{

@@ -20,6 +20,16 @@
 						<option value="ORDER BY harga DESC" <?php echo (@$_REQUEST['order']=='ORDER BY harga ASC') ? "selected": ""; ?>>Harga terendah</option>
 						<option value="ORDER BY harga ASC" <?php echo (@$_REQUEST['order']=='ORDER BY harga DESC') ? "selected": ""; ?>>Harga tertinggi</option>
 					</select>
+					 <label>Kategori</label>
+                 
+                        <select name="kategori" class="form-control" name="ketegori" required>
+                            <option value="">Plih Kategori</option>
+                            <option value="laptop" <?php echo (@$_REQUEST['kategori']=='laptop') ? "selected" : ""; ?>>laptop</option>
+                            <option value="proyektor" <?php echo (@$_REQUEST['kategori']=='proyektor') ? "selected" : ""; ?>>proyektor</option>
+                            <option value="screen proyektor" <?php echo (@$_REQUEST['kategori']=='screen proyektor') ? "selected" : ""; ?>>screen proyektor</option>
+                            <option value="kamera" <?php echo (@$_REQUEST['kategori']=='kamera') ? "selected" : ""; ?>>kamera</option>
+                            <option value="tripod kamera" <?php echo (@$_REQUEST['kategori']=='tripod kamera') ? "selected" : ""; ?>>tripod kamera</option>
+                        </select>
 					<label>Input Pencarian</label>
 					<input type="text" name="q" value="<?php echo @$_REQUEST['q']; ?>" placeholder="Input karakter" class="form-control">
 					<br>
@@ -35,8 +45,8 @@
 			error_reporting(0);
 			session_start();
 			include '../config/koneksi.php';
-			if(!empty($_REQUEST['q'])){
-				$q = "WHERE nama LIKE '%".$_REQUEST['q']."%'";
+			if(!empty($_REQUEST['q']) OR !empty($_REQUEST['kategori'])){
+				$q = "WHERE kategori='".$_REQUEST['kategori']."' AND nama LIKE '%".$_REQUEST['q']."%'";
 			}else{
 				$q = "";
 			}
@@ -135,6 +145,7 @@
 								type: "success"
 							}).then(function() {
 								updateQty();
+								$('#show_qty'+id).modal('toggle');
 							});
 						}else{
 							Swal.fire({

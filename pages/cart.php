@@ -153,8 +153,21 @@
                                     <select class="form-control" required="" name="pembayaran">
                                         <option value="">Pembayaran</option>
                                         <option value="cash">Cash</option>
-                                        <option value="transfer">Transfer</option>
-                                        <option value="payment">Payment</option>
+                                       <!--  <option value="transfer">Transfer</option>
+                                        <option value="payment">Payment</option> -->
+                                    </select>
+                                </div>
+                                 <div class="mt-3">
+                                    <label for="example-textarea" class="form-label">Tawar Harga</label>
+                                    <select class="form-control" required="" name="tawar" id="tawar" onchange="updateHarga('<?php echo $total_harga; ?>')" >
+                                        <option value="">Tawar</option>
+                                        <option value="1">1%</option>
+                                        <option value="2">2%</option>
+                                        <option value="3">3%</option>
+                                        <option value="4">4%</option>
+                                        <option value="5">5%</option>
+                                       <!--  <option value="transfer">Transfer</option>
+                                        <option value="payment">Payment</option> -->
                                     </select>
                                 </div>
                                 <!-- Add note input-->
@@ -261,6 +274,8 @@
             }
             function updateHarga(total_harga){
                 var pengiriman = $("#pengiriman").val();
+                var tawar = $("#tawar").val();
+                console.log(tawar);
                 if(pengiriman=='dikirim'){
                      var grand_totale = (parseInt(total_harga)+50000);
                      $("#grand_total2").html("Rp. "+grand_totale.toLocaleString());

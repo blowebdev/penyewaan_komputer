@@ -156,11 +156,11 @@ session_start();
 							</div>
 						</li>            
 						<?php else : ?>
-							<li class="dropdown notification-list">
+							<!-- <li class="dropdown notification-list">
 								<a class="nav-link dropdown-toggle  waves-effect waves-light" href="<?php echo $base_url; ?>login" role="button" aria-haspopup="false" aria-expanded="false">
 									<i class="fe-lock noti-icon"></i> Login
 								</a>
-							</li>
+							</li> -->
 						<?php endif; ?>
 
 					</ul>
