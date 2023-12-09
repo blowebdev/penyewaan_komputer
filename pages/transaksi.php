@@ -123,8 +123,8 @@ if (isset($_REQUEST['update_lunas'])) {
 								$wxc = mysqli_query($conn,"SELECT a.*, DATE(created_at) as tanggal_pemesanan FROM master_transaksi as a ".$filter." ORDER BY created_at ASC");
 								while ($data = mysqli_fetch_array($wxc)) {
 
-									  $showPengiriman = mysqli_query($conn,"SELECT * FROM master_tracking_pengiriman WHERE kode_transaksi='".$data['kode_transaksi']."' ORDER BY tanggal DESC");
-									  $pengiriman = mysqli_fetch_array($showPengiriman);
+									  // $showPengiriman = mysqli_query($conn,"SELECT * FROM master_tracking_pengiriman WHERE kode_transaksi='".$data['kode_transaksi']."' ORDER BY tanggal DESC");
+									  // $pengiriman = mysqli_fetch_array($showPengiriman);
 									?>
 									<tr>
 										<td nowrap=""><?php echo $data['tanggal_pemesanan']; ?></td>
@@ -182,7 +182,7 @@ if (isset($_REQUEST['update_lunas'])) {
 																<?php endif; ?>
 															<?php endif ?>
 														<?php endif; ?>
-														<a href="<?php echo $base_url; ?>pengiriman/<?php echo $data['kode_transaksi']; ?>" class="btn btn-success btn-sm" title="Tracking pengiriman"><i class="fe-truck"></i></a>
+														<!-- <a href="<?php echo $base_url; ?>pengiriman/<?php echo $data['kode_transaksi']; ?>" class="btn btn-success btn-sm" title="Tracking pengiriman"><i class="fe-truck"></i></a> -->
 													</td>
 												</tr>
 												<?php 

@@ -3,9 +3,9 @@
 $server="localhost";
 $username="root";
 $password="";
-$db="penyewaan_komputer";
+$db="sewa_komputer";
 $conn = mysqli_connect($server,$username,$password,$db);
-$base_url = "http://localhost/penyewaan_komputer/";
+$base_url = "http://localhost/sewa_komputer/";
 
 function hari_tanggal($waktu)
 {
