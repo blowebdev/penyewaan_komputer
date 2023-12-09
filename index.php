@@ -259,7 +259,7 @@ session_start();
 										<li>
 											<a href="<?php echo $base_url; ?>transaksi">Transaksi</a>
 											<a href="<?php echo $base_url; ?>item_harus_dikembalikan">Barang Dikembalikan</a>
-											<a href="<?php echo $base_url; ?>konfirmasi_pembayaran">Konfirmasi Pembayaran</a>
+											<!-- <a href="<?php echo $base_url; ?>konfirmasi_pembayaran">Konfirmasi Pembayaran</a> -->
 										</li>
 									</ul>
 								</li>

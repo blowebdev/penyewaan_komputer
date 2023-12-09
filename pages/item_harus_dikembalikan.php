@@ -307,7 +307,7 @@ if (isset($_REQUEST['update_lunas'])) {
                                                </div>
 
                                                <?php else :  ?>
-                                                 <div class="btn-group dropdown">
+                                                <!--  <div class="btn-group dropdown">
                                                     <a href="javascript: void(0);" class="dropdown-toggle arrow-none btn btn-light btn-sm" data-toggle="dropdown" aria-expanded="false"><i class="mdi mdi-dots-horizontal"></i></a>
                                                     <div class="dropdown-menu dropdown-menu-right" style="padding: 12px">
                                                         <form action="" method="POST">
@@ -320,7 +320,7 @@ if (isset($_REQUEST['update_lunas'])) {
                                                            <button class="dropdown-item" type="submit" class="btn btn-danger" name="update_lunas"><i class="mdi mdi-check-all mr-2 text-muted font-18 vertical-middle"></i> Set Sudah Kembali</button>
                                                        </form>
                                                    </div>
-                                               </div>
+                                               </div> -->
                                            <?php endif; ?>
                                        </td>
                                    </tr>

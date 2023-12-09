@@ -173,12 +173,12 @@ if (isset($_REQUEST['update_lunas'])) {
 													</div>
 													<?php else : ?>
 														<?php if($data['status']=='LUNAS') : ?>
-															<a href="<?php echo $base_url; ?>review/<?php echo $data['kode_transaksi']; ?>" class="btn btn-warning btn-sm" title="Review"><i class="fa fa-star"></i></a>
+															<!-- <a href="<?php echo $base_url; ?>review/<?php echo $data['kode_transaksi']; ?>" class="btn btn-warning btn-sm" title="Review"><i class="fa fa-star"></i></a> -->
 															<a href="<?php echo $base_url; ?>show_detail_transaksi/<?php echo $data['kode_transaksi']; ?>" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
 															<?php else : ?>
-																<a href="<?php echo $base_url; ?>show_detail_transaksi/<?php echo $data['kode_transaksi']; ?>" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
+																<!-- <a href="<?php echo $base_url; ?>show_detail_transaksi/<?php echo $data['kode_transaksi']; ?>" class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a> -->
 																<?php if($detail_transaksi['pembayaran']=='transfer') : ?>
-																	<a href="<?php echo $base_url; ?>konfirmasi_pembayaran/<?php echo $data['kode_transaksi']; ?>" class="btn btn-danger btn-sm"><i class="fa fa-upload"></i></a>
+																	<!-- <a href="<?php echo $base_url; ?>konfirmasi_pembayaran/<?php echo $data['kode_transaksi']; ?>" class="btn btn-danger btn-sm"><i class="fa fa-upload"></i></a> -->
 																<?php endif; ?>
 															<?php endif ?>
 														<?php endif; ?>
