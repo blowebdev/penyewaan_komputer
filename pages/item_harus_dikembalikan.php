@@ -287,7 +287,6 @@ if (isset($_REQUEST['update_lunas'])) {
 
                                        <td nowrap="">
                                         <?php if(in_array($_SESSION['level'], array('1'))) : ?>
-                                            <?php if($data['sisa_hari']>=1): ?>
                                                 <div class="btn-group dropdown">
                                                     <a href="javascript: void(0);" class="dropdown-toggle arrow-none btn btn-light btn-sm" data-toggle="dropdown" aria-expanded="false"><i class="mdi mdi-dots-horizontal"></i></a>
                                                     <div class="dropdown-menu dropdown-menu-right" style="padding: 12px">
@@ -306,7 +305,6 @@ if (isset($_REQUEST['update_lunas'])) {
                                                        </form>
                                                    </div>
                                                </div>
-                                               <?php endif; ?>
 
                                                <?php else :  ?>
                                                  <div class="btn-group dropdown">
