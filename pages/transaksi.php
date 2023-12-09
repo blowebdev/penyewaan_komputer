@@ -152,22 +152,22 @@ if (isset($_REQUEST['update_lunas'])) {
 															<form action="" method="POST">
 																<input type="hidden" name="id" value="<?php echo $data['id']; ?>">
 																<input type="hidden" name="status" value="LUNAS">
-																<button class="dropdown-item" type="submit" name="update_lunas"><i class="mdi mdi-check-all mr-2 text-muted font-18 vertical-middle"></i> Lunas</button>
+																<button class="dropdown-item" type="submit" name="update_lunas"><i class="mdi mdi-check-all mr-2 text-muted font-18 vertical-middle"></i> Setujui</button>
 															</form>
 															<form action="" method="POST">
 																<input type="hidden" name="id" value="<?php echo $data['id']; ?>">
 																<input type="hidden" name="status" value="BATAL">
-																<button class="dropdown-item" type="submit" name="update_lunas"><i class="fe-rotate-ccw mr-2 text-muted font-18 vertical-middle"></i> Batalkan</button>
+																<button class="dropdown-item" type="submit" name="update_lunas"><i class="fe-rotate-ccw mr-2 text-muted font-18 vertical-middle"></i> Tolak</button>
 															</form>
 															<a href="<?php echo $base_url; ?>show_detail_transaksi/<?php echo $data['kode_transaksi']; ?>" class="dropdown-item" type="submit"><i class="fa fa-eye mr-2 text-muted font-18 vertical-middle"></i> Invoice</a>
 
 															<a href="<?php echo $base_url; ?>item_harus_dikembalikan/<?php echo $data['kode_transaksi']; ?>" class="dropdown-item" type="submit"><i class="fe-shopping-bag mr-2 text-muted font-18 vertical-middle"></i> Detail Barang</a>
 
-															<a href="<?php echo $base_url; ?>review/<?php echo $data['kode_transaksi']; ?>/<?php echo $data['id_pelanggan']; ?>" class="dropdown-item" type="submit"><i class="fe-slack mr-2 text-muted font-18 vertical-middle"></i>Review</a>
+															<!-- <a href="<?php echo $base_url; ?>review/<?php echo $data['kode_transaksi']; ?>/<?php echo $data['id_pelanggan']; ?>" class="dropdown-item" type="submit"><i class="fe-slack mr-2 text-muted font-18 vertical-middle"></i>Review</a> -->
 
-															<a href="<?php echo $base_url; ?>konfirmasi_pembayaran/<?php echo $data['kode_transaksi']; ?>" class="dropdown-item" type="submit"><i class=" ti-back-right mr-2 text-muted font-18 vertical-middle"></i> Struk Pembayaran</a>
+															<!-- <a href="<?php echo $base_url; ?>konfirmasi_pembayaran/<?php echo $data['kode_transaksi']; ?>" class="dropdown-item" type="submit"><i class=" ti-back-right mr-2 text-muted font-18 vertical-middle"></i> Struk Pembayaran</a>
 
-															<a href="<?php echo $base_url; ?>pengiriman/<?php echo $data['kode_transaksi']; ?>" class="dropdown-item" type="submit"><i class="fe-truck mr-2 text-muted font-18 vertical-middle"></i> Pengiriman</a>
+															<a href="<?php echo $base_url; ?>pengiriman/<?php echo $data['kode_transaksi']; ?>" class="dropdown-item" type="submit"><i class="fe-truck mr-2 text-muted font-18 vertical-middle"></i> Pengiriman</a> -->
 															
 														</div>
 													</div>

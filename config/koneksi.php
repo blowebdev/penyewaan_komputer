@@ -88,7 +88,7 @@ function status($txt){
     }elseif ($txt=='BATAL') {
          return "<label class='text-danger'>BATAL</label>";
     }elseif($txt=='LUNAS'){
-        return "<label class='text-success'>LUNAS</label>";
+        return "<label class='text-success'>DISETUJUI</label>";
     }
 }
 
