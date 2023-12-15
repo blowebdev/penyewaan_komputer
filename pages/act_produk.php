@@ -1,4 +1,6 @@
-
+<?php
+include '../config/koneksi.php';
+?>
 <div class="row">
 	<!-- <div class="col-lg-3">
 		<div class="card">
@@ -9,7 +11,7 @@
 			</div>
 		</div>
 	</div> -->
-	<div class="col-lg-3">
+	<div class="col-lg-3 col-xl-3">
 		<div class="card">
 			<div class="card-body">
 				<H5>Filter Data</H5>
@@ -34,17 +36,17 @@
 					<input type="text" name="q" value="<?php echo @$_REQUEST['q']; ?>" placeholder="Input karakter" class="form-control">
 					<br>
 					<button class="btn btn-sm btn-success btn-block" type="submit" name="cari">Cari</button>
-					<a href="<?php echo $base_url; ?>produk" class="btn btn-sm btn-block btn-danger">Reset</a>
+					<a href="<?php echo $base_url; ?>pencarian_tanggal" class="btn btn-sm btn-block btn-danger">Reset</a>
 				</form>
 			</div>
 		</div>
 	</div>
-	<div class="col-lg-9">
+	<div class="col-lg-9 col-xl-9">
 		<div class="row">
 			<?php 
 			error_reporting(0);
 			session_start();
-			include '../config/koneksi.php';
+			
 			if(!empty($_REQUEST['q']) OR !empty($_REQUEST['kategori'])){
 				$q = "WHERE kategori='".$_REQUEST['kategori']."' AND nama LIKE '%".$_REQUEST['q']."%'";
 			}else{

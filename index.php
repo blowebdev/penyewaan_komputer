@@ -86,6 +86,7 @@ session_start();
 								<span class="badge badge-danger rounded-circle noti-icon-badge" id="qty">0</span>
 							</a>
 						</li>
+						<?php if(!empty($_SESSION['username'])) : ?>
 						<li class="dropdown notification-list">
 
 								<?php 
@@ -114,6 +115,7 @@ session_start();
 									<span class="badge badge-danger rounded-circle noti-icon-badge"><?php echo $total_isine_pesanan; ?></span>
 								</a>
 							</li>
+						<?php endif; ?>
 					<?php else : ?>
 						<?php if(in_array($_SESSION['level'], array('1'))): 
 							$total_isine_pesanan = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM master_transaksi WHERE status='PROSES'"));
@@ -203,6 +205,9 @@ session_start();
 								</li>
 								<li class="has-submenu">
 									<a href="<?php echo $base_url; ?>faq"><i class="fe-command"></i>FAQ </a>
+								</li>
+								<li class="has-submenu">
+									<a href="<?php echo $base_url; ?>cek_traksaksi"><i class="fe-shopping-bag"></i> Cek Transaksi </a>
 								</li>
 							<?php endif; ?>
 							<?php if(in_array($_SESSION['level'], array('1'))) : ?>

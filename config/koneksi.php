@@ -3,7 +3,7 @@
 $server="localhost";
 $username="root";
 $password="";
-$db="sewa_komputer";
+$db="penyewaan_komputer";
 $conn = mysqli_connect($server,$username,$password,$db);
 $base_url = "http://localhost/sewa_komputer/";
 

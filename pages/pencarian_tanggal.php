@@ -97,7 +97,7 @@
             url: '<?php echo $base_url; ?>pages/act_produk.php',
             type: 'get',
             dataType: 'html',
-            data: {tanggal_pinjam: tglPinjam, tanggal_selesai : tglSelesai, q : '<?php echo @$_REQUEST['q']; ?>', sql : '<?php echo @$_REQUEST['order']; ?>'},
+            data: {tanggal_pinjam: tglPinjam, tanggal_selesai : tglSelesai, q : '<?php echo @$_REQUEST['q']; ?>', sql : '<?php echo @$_REQUEST['order']; ?>', kategori: '<?php echo @$_REQUEST['kategori']; ?>', order : '<?php echo $_REQUEST['order']; ?>'},
             success:function(data){
                 $("#detail_produk").html(data);
             }
