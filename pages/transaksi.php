@@ -51,7 +51,10 @@ if (!in_array($_SESSION['level'], array('1','2'))) {
 if (isset($_REQUEST['update_lunas'])) {
 	$sql = "UPDATE master_transaksi SET status='".$_REQUEST['status']."' WHERE id='".$_REQUEST['id']."'";
 	$exc = mysqli_query($conn,$sql);
+	$hp = $_REQUEST['hp'];
+	$text = $_REQUEST['text'];
 	if ($exc) {
+		sendWa1($hp,$text);
 		echo '
 		<div class="alert alert-success alert-dismissible" role="alert">
 		<div class="alert-message">
@@ -151,11 +154,15 @@ if (isset($_REQUEST['update_lunas'])) {
 														<div class="dropdown-menu dropdown-menu-right">
 															<form action="" method="POST">
 																<input type="hidden" name="id" value="<?php echo $data['id']; ?>">
+																<input type="hidden" name="hp" value="<?php echo $data['hp']; ?>">
+																<input type="hidden" name="text" value="Notifikasi Transaksi Sewa Komputer Atas Nama <?php echo $data['nama']; ?> dengan kode transaksi <?php echo $data['kode_transaksi']; ?> Sudah *DISETUJUI* pada tanggal <?php echo $data['created_at']; ?>">
 																<input type="hidden" name="status" value="LUNAS">
 																<button class="dropdown-item" type="submit" name="update_lunas"><i class="mdi mdi-check-all mr-2 text-muted font-18 vertical-middle"></i> Setujui</button>
 															</form>
 															<form action="" method="POST">
 																<input type="hidden" name="id" value="<?php echo $data['id']; ?>">
+																<input type="hidden" name="hp" value="<?php echo $data['hp']; ?>">
+																<input type="hidden" name="text" value="Notifikasi Transaksi Sewa Komputer Atas Nama <?php echo $data['nama']; ?> dengan kode transaksi <?php echo $data['kode_transaksi']; ?>  *DITOLAK* pada tanggal <?php echo $data['created_at']; ?>">
 																<input type="hidden" name="status" value="BATAL">
 																<button class="dropdown-item" type="submit" name="update_lunas"><i class="fe-rotate-ccw mr-2 text-muted font-18 vertical-middle"></i> Tolak</button>
 															</form>
